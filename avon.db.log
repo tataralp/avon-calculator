@@ -1,0 +1,4 @@
+/*C3*/SET SCHEMA PUBLIC
+ALTER TABLE vasarlo ALTER COLUMN Telefon_szam varchar(255)
+INSERT INTO VASARLO VALUES(1,'Tat\u00e1r','Zsu','70es','susanlpfan',25)
+COMMIT
