@@ -1,4 +1,4 @@
-package hu.inf.unideb.avon_calculator;
+package hu.inf.unideb.avon_calculator.model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,6 +10,7 @@ public class AdatbazisKezelo {
 
 	private static final String DB_DRIVER = "org.hsqldb.jdbcDriver";
 	private static final String DB_URL = "jdbc:hsqldb:mem:avon";
+//	private static final String DB_URL = "jdbc:hsqldb:file:f:/Progik/JAVA progt-ptogk/avon-calculator/avon3.db";
 
 	static{
 		try {
@@ -22,7 +23,7 @@ public class AdatbazisKezelo {
 	public static Connection getDbKapcsolat() {
 		Connection dbKapcsolat = null;
 		try {
-			dbKapcsolat = DriverManager.getConnection(DB_URL);
+			dbKapcsolat = DriverManager.getConnection(DB_URL, "SA", "");
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}

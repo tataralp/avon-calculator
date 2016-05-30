@@ -1,4 +1,4 @@
-package hu.inf.unideb.avon_calculator;
+package hu.inf.unideb.avon_calculator.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

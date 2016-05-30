@@ -1,4 +1,4 @@
-package hu.inf.unideb.avon_calculator;
+package hu.inf.unideb.avon_calculator.model;
 
 public class Termek {
 

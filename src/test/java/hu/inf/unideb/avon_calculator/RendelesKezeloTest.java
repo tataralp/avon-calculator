@@ -1,13 +1,18 @@
 package hu.inf.unideb.avon_calculator;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
 
-public class RendelesKezeloTeszt {
+import hu.inf.unideb.avon_calculator.model.Rendeles;
+import hu.inf.unideb.avon_calculator.model.RendelesKezelo;
+import hu.inf.unideb.avon_calculator.model.Termek;
+import hu.inf.unideb.avon_calculator.model.Vasarlo;
+
+public class RendelesKezeloTest {
 
 	@Test
 	public void tesztTeljesRendelesOsszeg() {

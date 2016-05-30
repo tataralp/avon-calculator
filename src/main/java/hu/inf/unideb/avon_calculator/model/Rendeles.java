@@ -1,34 +1,34 @@
-package hu.inf.unideb.avon_calculator;
+package hu.inf.unideb.avon_calculator.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 public class Rendeles {
 
 	private int id;
-	private String kampány;
+	private String kampany;
 	private Vasarlo vasarlo;
 	private List<Termek> vasarloiRendeles;
-	private LocalDateTime idopont;
+	private LocalDate idopont;
 
 	public Rendeles() {
 		super();
 	}
 
-	public Rendeles(String kampány, Vasarlo vasarlo, List<Termek> vasarloiRendeles) {
+	public Rendeles(String kampany, Vasarlo vasarlo, List<Termek> vasarloiRendeles) {
 		super();
-		this.kampány = kampány;
+		this.kampany = kampany;
 		this.vasarlo = vasarlo;
 		this.vasarloiRendeles = vasarloiRendeles;
-		this.idopont = LocalDateTime.now();
+		this.idopont = LocalDate.now();
 	}
 
-	public String getKampány() {
-		return kampány;
+	public String getKampany() {
+		return kampany;
 	}
 
-	public void setKampány(String kampány) {
-		this.kampány = kampány;
+	public void setKampany(String kampany) {
+		this.kampany = kampany;
 	}
 
 	public int getId() {
@@ -51,11 +51,11 @@ public class Rendeles {
 		return getVasarloiRendeles().remove(vasarloiRendeles);
 	}
 
-	public LocalDateTime getIdopont() {
+	public LocalDate getIdopont() {
 		return idopont;
 	}
 
-	public void setIdopont(LocalDateTime idopont) {
+	public void setIdopont(LocalDate idopont) {
 		this.idopont = idopont;
 	}
 

@@ -1,4 +1,4 @@
-package hu.inf.unideb.avon_calculator;
+package hu.inf.unideb.avon_calculator.model;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,6 +9,11 @@ import java.util.List;
 
 public class VasarloDao {
 
+	/**
+	 * Lekérdezi az adatbzisból a vásárlókat.
+	 * 
+	 * @return vasarlokat tratalmazó lista
+	 */
 	public List<Vasarlo> lekerdezVasarlok() {
 		List<Vasarlo> vasarlok = new ArrayList<>();
 		String selectSQL = "SELECT * FROM VASARLO";
@@ -57,7 +62,7 @@ public class VasarloDao {
 			preparedStatement.setString(3, vasarlo.getEmail());
 			preparedStatement.setInt(4, vasarlo.getvKedvezmeny());
 			
-			preparedStatement .executeUpdate();
+			preparedStatement.executeUpdate();
 			AdatbazisKezelo.lezarDbKapcsolat(dbKapcsolat);
 			AdatbazisKezelo.lezarPreparedStatement(preparedStatement);
 		} catch (SQLException e) {

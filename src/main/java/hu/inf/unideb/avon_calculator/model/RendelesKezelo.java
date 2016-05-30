@@ -1,4 +1,4 @@
-package hu.inf.unideb.avon_calculator;
+package hu.inf.unideb.avon_calculator.model;
 
 
 public class RendelesKezelo {
@@ -24,9 +24,6 @@ public class RendelesKezelo {
 			}
 		}
 		return eredmeny;
-//		return (1 - (rendeles.getVasarlo().getvKedvezmeny()/100.0)) * 
-//				rendeles.getVasarloiRendeles().stream()
-//				.mapToDouble(r -> r.getAr() * r.getDarabszam()).sum();
 	}
 	
 	public double teljesHaszonOsszegSzamolas (Rendeles rendeles){
