@@ -7,19 +7,19 @@ public class Vasarlo {
 	private String keresztNev;
 	private String telefonszam;
 	private String email;
-	private int vKedvezmeny;
+	private int vasarloKedvezmeny;
 
 	public Vasarlo() {
 		super();
 	}
 
-	public Vasarlo(String vezetekNev, String keresztNev, String telefonszam, String email, int vKedvezmeny) {
+	public Vasarlo(String vezetekNev, String keresztNev, String telefonszam, String email, int vasarloKedvezmeny) {
 		super();
 		this.vezetekNev = vezetekNev;
 		this.keresztNev = keresztNev;
 		this.telefonszam = telefonszam;
 		this.email = email;
-		this.setvKedvezmeny(vKedvezmeny);
+		this.setVasarloKedvezmeny(vasarloKedvezmeny);
 	}
 
 	public int getId() {
@@ -62,14 +62,14 @@ public class Vasarlo {
 		this.email = email;
 	}
 
-	public int getvKedvezmeny() {
-		return vKedvezmeny;
+	public int getVasarloKedvezmeny() {
+		return vasarloKedvezmeny;
 	}
 
-	public void setvKedvezmeny(int vKedvezmeny) throws IllegalArgumentException {
-		if (vKedvezmeny < 0 || vKedvezmeny > 100)
+	public void setVasarloKedvezmeny(int vasarloKedvezmeny) throws IllegalArgumentException {
+		if (vasarloKedvezmeny < 0 || vasarloKedvezmeny > 100)
 			throw new IllegalArgumentException();
-		this.vKedvezmeny = vKedvezmeny;
+		this.vasarloKedvezmeny = vasarloKedvezmeny;
 	}
 
 	@Override
@@ -80,7 +80,7 @@ public class Vasarlo {
 		result = prime * result + id;
 		result = prime * result + ((keresztNev == null) ? 0 : keresztNev.hashCode());
 		result = prime * result + ((telefonszam == null) ? 0 : telefonszam.hashCode());
-		result = prime * result + vKedvezmeny;
+		result = prime * result + vasarloKedvezmeny;
 		result = prime * result + ((vezetekNev == null) ? 0 : vezetekNev.hashCode());
 		return result;
 	}
@@ -111,7 +111,7 @@ public class Vasarlo {
 				return false;
 		} else if (!telefonszam.equals(other.telefonszam))
 			return false;
-		if (vKedvezmeny != other.vKedvezmeny)
+		if (vasarloKedvezmeny != other.vasarloKedvezmeny)
 			return false;
 		if (vezetekNev == null) {
 			if (other.vezetekNev != null)
@@ -123,8 +123,8 @@ public class Vasarlo {
 
 	@Override
 	public String toString() {
-		return "Vasarlo: " + id + ", Nev: " + keresztNev + " " + vezetekNev + ", telsz.: " + telefonszam + ", email: "
-				+ email + ", Kedvezmeny: " + vKedvezmeny;
+		return vezetekNev + " " + keresztNev;
+		//"Vasarlo: " + id + ", Nev: " + keresztNev + " " + vezetekNev + ", telsz.: " + telefonszam + ", email: " + email + ", Kedvezmeny: " + vKedvezmeny;
 	}
 
 }

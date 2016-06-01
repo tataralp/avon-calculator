@@ -1,6 +1,7 @@
 package hu.inf.unideb.avon_calculator.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Rendeles {
@@ -8,7 +9,7 @@ public class Rendeles {
 	private int id;
 	private String kampany;
 	private Vasarlo vasarlo;
-	private List<Termek> vasarloiRendeles;
+	private List<Termek> vasarloiRendeles = new ArrayList<>();
 	private LocalDate idopont;
 
 	public Rendeles() {

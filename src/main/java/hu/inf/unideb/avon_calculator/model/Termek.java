@@ -17,9 +17,9 @@ public class Termek {
 		super();
 		this.cikkszam = cikkszam;
 		this.nev = nev;
-		this.ar = ar;
-		this.darabszam = darabszam;
-		this.avonKedvezmeny = avonKedvezmeny;
+		this.setAr(ar);
+		this.setDarabszam(darabszam);
+		this.setAvonKedvezmeny(avonKedvezmeny);
 	}
 
 	public int getId() {
@@ -50,7 +50,9 @@ public class Termek {
 		return ar;
 	}
 
-	public void setAr(int ar) {
+	public void setAr(int ar) throws IllegalArgumentException {
+		if (ar < 0)
+			throw new IllegalArgumentException();
 		this.ar = ar;
 	}
 
@@ -58,7 +60,9 @@ public class Termek {
 		return darabszam;
 	}
 
-	public void setDarabszam(int darabszam) {
+	public void setDarabszam(int darabszam) throws IllegalArgumentException {
+		if (darabszam < 0)
+			throw new IllegalArgumentException();
 		this.darabszam = darabszam;
 	}
 

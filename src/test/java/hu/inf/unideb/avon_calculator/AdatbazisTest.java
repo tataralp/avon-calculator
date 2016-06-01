@@ -30,7 +30,7 @@ public class AdatbazisTest {
 		Assert.assertEquals("Tatár", lekerdezVasarlok.get(0).getVezetekNev());
 		Assert.assertEquals("susanlpfan", lekerdezVasarlok.get(0).getEmail());
 		Assert.assertEquals("70es", lekerdezVasarlok.get(0).getTelefonszam());
-		Assert.assertEquals(25, lekerdezVasarlok.get(0).getvKedvezmeny());
+		Assert.assertEquals(25, lekerdezVasarlok.get(0).getVasarloKedvezmeny());
 	}
 	
 	@Test

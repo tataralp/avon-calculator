@@ -15,8 +15,8 @@ public class RendelesKezelo {
 	public double teljesRendelesVasarloiKedvezmennyelOsszegSzamolas(Rendeles rendeles) {
 		Double eredmeny = 0.0;
 		for (Termek termek : rendeles.getVasarloiRendeles()) {
-			if(termek.getAvonKedvezmeny() >= rendeles.getVasarlo().getvKedvezmeny()){
-				eredmeny += (1 - (rendeles.getVasarlo().getvKedvezmeny()/100.0)) * 
+			if(termek.getAvonKedvezmeny() >= rendeles.getVasarlo().getVasarloKedvezmeny()){
+				eredmeny += (1 - (rendeles.getVasarlo().getVasarloKedvezmeny()/100.0)) * 
 						termek.getAr() * termek.getDarabszam();
 			} else {
 				eredmeny += (1 - (termek.getAvonKedvezmeny()/100.0)) * 

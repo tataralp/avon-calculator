@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="hu.inf.unideb.avon_calculator.controller.RendelesKepernyoController">
+	<center>
+		<AnchorPane prefHeight="600.0" prefWidth="800.0"
+			BorderPane.alignment="CENTER">
+			<TableView fx:id="rendelesTableview" onMouseClicked="#kattraTermekek"
+				prefHeight="300.0" prefWidth="471.0" BorderPane.alignment="CENTER">
+				<columns>
+					<TableColumn fx:id="kamp" prefWidth="120.0" text="Kampány" />
+					<TableColumn fx:id="vas" prefWidth="235.0" text="Vasarlo" />
+					<TableColumn fx:id="idop" prefWidth="114.0" text="Idopont" />
+				</columns>
+			</TableView>
+			<TableView fx:id="termekekTableview" layoutY="300.0"
+				prefHeight="300.0" prefWidth="800.0">
+				<columns>
+					<TableColumn fx:id="cikksz" prefWidth="118.0" text="Cikkszam" />
+					<TableColumn fx:id="nev" prefWidth="352.0" text="Név" />
+					<TableColumn fx:id="ar" prefWidth="135.0" text="Ár" />
+					<TableColumn fx:id="dbsz" prefWidth="90.0" text="Darabszám" />
+					<TableColumn fx:id="kedv" prefWidth="103.0" text="Kedvezmény" />
+				</columns>
+			</TableView>
+			<Label layoutX="479.0" layoutY="14.0" text="Teljes rendelés Összeg:" />
+			<Label layoutX="517.0" layoutY="39.0" text="0 Ft" fx:id="troSz" />
+			<Label layoutX="479.0" layoutY="64.0"
+				text="Teljes rendelés Avon kedvezménnyel:" />
+			<Label layoutX="517.0" layoutY="89.0" text="0 Ft" fx:id="trAkedvSz" />
+			<Label layoutX="479.0" layoutY="114.0"
+				text="Teljes rendelés vásárlói kedvezménnyel:" />
+			<Label layoutX="517.0" layoutY="139.0" text="0 Ft" fx:id="trVkedvSz" />
+			<Label layoutX="479.0" layoutY="164.0" text="Teljes haszon összeg:" />
+			<Label layoutX="517.0" layoutY="189.0" text="0 Ft" fx:id="thaszosszSz" />
+			<Label layoutX="479.0" layoutY="214.0" text="Teljes vásárlói kedvezmény:" />
+			<Label layoutX="517.0" layoutY="239.0" text="0 Ft" fx:id="tvaskedvSz" />
+		</AnchorPane>
+	</center>
+</BorderPane>

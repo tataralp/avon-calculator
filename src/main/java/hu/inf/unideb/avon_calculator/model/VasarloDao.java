@@ -59,8 +59,8 @@ public class VasarloDao {
 			preparedStatement.setString(1, vasarlo.getVezetekNev());
 			preparedStatement.setString(2, vasarlo.getKeresztNev());
 			preparedStatement.setString(3, vasarlo.getTelefonszam());
-			preparedStatement.setString(3, vasarlo.getEmail());
-			preparedStatement.setInt(4, vasarlo.getvKedvezmeny());
+			preparedStatement.setString(4, vasarlo.getEmail());
+			preparedStatement.setInt(5, vasarlo.getVasarloKedvezmeny());
 			
 			preparedStatement.executeUpdate();
 			AdatbazisKezelo.lezarDbKapcsolat(dbKapcsolat);
@@ -96,7 +96,7 @@ public class VasarloDao {
 			preparedStatement.setString(2, vasarlo.getKeresztNev());
 			preparedStatement.setString(3, vasarlo.getTelefonszam());
 			preparedStatement.setString(3, vasarlo.getEmail());
-			preparedStatement.setInt(4, vasarlo.getvKedvezmeny());
+			preparedStatement.setInt(4, vasarlo.getVasarloKedvezmeny());
 			preparedStatement.setInt(5, vasarlo.getId());
 			
 			preparedStatement .executeUpdate();

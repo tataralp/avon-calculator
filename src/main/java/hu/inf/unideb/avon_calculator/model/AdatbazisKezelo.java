@@ -9,8 +9,8 @@ import java.sql.SQLException;
 public class AdatbazisKezelo {
 
 	private static final String DB_DRIVER = "org.hsqldb.jdbcDriver";
-	private static final String DB_URL = "jdbc:hsqldb:mem:avon";
-//	private static final String DB_URL = "jdbc:hsqldb:file:f:/Progik/JAVA progt-ptogk/avon-calculator/avon3.db";
+//	private static final String DB_URL = "jdbc:hsqldb:mem:avon";
+	private static final String DB_URL = "jdbc:hsqldb:file:f:/Progik/JAVA progt-ptogk/avon-calculator/avon3.db";
 
 	static{
 		try {
