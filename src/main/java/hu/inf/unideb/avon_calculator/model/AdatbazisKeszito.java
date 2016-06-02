@@ -8,7 +8,7 @@ import java.sql.SQLException;
  * Az adatbázis készítését végző osztály.
  * 
  * @since 1.0
- * @author Anikó
+ * @author Tatár Anikó
  *
  */
 public class AdatbazisKeszito {

@@ -77,17 +77,17 @@ public class RendelesKezeloTest {
 
 	@Test
 	public void tesztTeljesHaszonOsszeg2() {
-		Vasarlo vasarlo1 = new Vasarlo("vn", "knev", "2345", "email", 25);
+		Vasarlo vasarlo1 = new Vasarlo("vn", "knev", "2345", "email", 10);
 		List<Termek> vasarloiRendeles1 = new ArrayList<Termek>();
 		Termek termek1 = new Termek(23456, "tusi", 1000, 1, 25);
-		//Termek termek2 = new Termek(23456, "sampi", 350, 3, 30);
-		//Termek termek3 = new Termek(23456, "sampi", 200, 1, 0);
+		Termek termek2 = new Termek(23456, "sampi", 350, 3, 30);
+		Termek termek3 = new Termek(23456, "sampi", 200, 1, 0);
 		vasarloiRendeles1.add(termek1);
-		//vasarloiRendeles1.add(termek2);
-		//vasarloiRendeles1.add(termek3);
+		vasarloiRendeles1.add(termek2);
+		vasarloiRendeles1.add(termek3);
 		Rendeles rendeles = new Rendeles("5", vasarlo1, vasarloiRendeles1);
 		RendelesKezelo rendelesKezelo = new RendelesKezelo();
-		assertEquals(50, rendelesKezelo.teljesHaszonOsszegSzamolas(rendeles), 0);
+		assertEquals(360, rendelesKezelo.teljesHaszonOsszegSzamolas(rendeles), 0);
 	}
 
 	@Test

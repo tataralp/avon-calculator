@@ -22,7 +22,7 @@ public class RendelesDao {
 	/**
 	 * Rendelést ad hozzá az adatbázishoz.
 	 * 
-	 * @param rendeles Rendelés
+	 * @param rendeles Rendelés {@link Rendeles}
 	 */
 	public void hozzaAdRendelest(Rendeles rendeles) {
 		try {
@@ -55,7 +55,7 @@ public class RendelesDao {
 	/**
 	 * Lekérdezi az adatbázisból a rendeléseket.
 	 * 
-	 * @return Rendelés lista
+	 * @return Rendelés lista Egy rendeléseket {@link Rendeles} tartalmazó lista.
 	 */
 	public List<Rendeles> lekerdezRendelesek() {
 		List<Rendeles> rendelesek = new ArrayList<>();
@@ -112,9 +112,9 @@ public class RendelesDao {
 	/**
 	 * A megadott id-val rendelkező vásárlót (vásárló listából) lekérdező segédmetódus. 
 	 * 
-	 * @param vasarlok Vásárló lista
+	 * @param vasarlok Vásárló lista Egy vásárlókat {@link Vasarlo} tartalmazó lista.
 	 * @param vasarloID Vásárló id
-	 * @return Vásárló
+	 * @return Vásárló {@link Vasarlo}
 	 */
 	private Vasarlo getVasarlo(List<Vasarlo> vasarlok, int vasarloID){
 		Vasarlo vasarlom = new Vasarlo();

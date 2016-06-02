@@ -7,7 +7,7 @@ Telefon_szam varchar(255),
 E_mail varchar(255),
 Vasarlo_kedvezmeny int,
 PRIMARY KEY (Vasarlo_ID)
-)
+);
 
 CREATE TABLE rendeles
 (
@@ -17,7 +17,7 @@ Vasarlo_ID int,
 Idopont date,
 PRIMARY KEY (Rendeles_ID),
 FOREIGN KEY (Vasarlo_ID) REFERENCES vasarlo (Vasarlo_ID)
-)
+);
 
 CREATE TABLE termek
 (
@@ -30,7 +30,5 @@ Avon_kedvezmeny int,
 Rendeles_ID int,
 PRIMARY KEY (Termek_ID),
 FOREIGN KEY (Rendeles_ID) REFERENCES rendeles (Rendeles_ID)
-)
-
-INSERT INTO vasarlo(Vezetek_nev, Kereszt_nev, Telefon_szam, E_mail, Vasarlo_kedvezmeny) VALUES('Tatár', 'Zsu', '70es', 'susanlpfan', 25 );
+);
 

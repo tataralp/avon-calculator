@@ -99,7 +99,7 @@ public class Rendeles {
 	/**
 	 * Lekéri a rendeléshez tartozó vásárlói terméklistát.
 	 * 
-	 * @return Terméklista / Vásárlói rendelés
+	 * @return Vásárlói rendelés / Egy termékeket {@link Termek} tartalmazó lista.
 	 */
 	public List<Termek> getVasarloiRendeles() {
 		return vasarloiRendeles;
@@ -108,20 +108,10 @@ public class Rendeles {
 	/**
 	 * Terméket ad a vásárlói rendeléshez.
 	 * 
-	 * @param vasarloiRendeles Terméklista / Vásárlói rendelés
+	 * @param vasarloiRendeles  Vásárlói rendelés / Egy termékeket {@link Termek} tartalmazó lista.
 	 */
 	public void addTermek(Termek vasarloiRendeles) {
 		getVasarloiRendeles().add(vasarloiRendeles);
-	}
-
-	/**
-	 * Terméket vesz ki a vásárlói rendelésből.
-	 * 
-	 * @param vasarloiRendeles Terméklista / Vásárlói rendelés
-	 * @return
-	 */
-	public boolean removeTermek(Termek vasarloiRendeles) {
-		return getVasarloiRendeles().remove(vasarloiRendeles);
 	}
 
 	/**
@@ -145,7 +135,7 @@ public class Rendeles {
 	/**
 	 * Lekéri a rendelés vásárlóját.
 	 * 
-	 * @return Vásárló
+	 * @return Vásárló {@link Vasarlo}
 	 */
 	public Vasarlo getVasarlo() {
 		return vasarlo;
@@ -154,7 +144,7 @@ public class Rendeles {
 	/**
 	 * Beállítja a rendelés vásárlóját.
 	 * 
-	 * @param vasarlo Vásárló
+	 * @param vasarlo Vásárló {@link Vasarlo}
 	 */
 	public void setVasarlo(Vasarlo vasarlo) {
 		this.vasarlo = vasarlo;

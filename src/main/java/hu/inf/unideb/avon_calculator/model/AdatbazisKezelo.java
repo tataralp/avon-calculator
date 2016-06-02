@@ -10,33 +10,35 @@ import java.sql.SQLException;
  * Az adatbázis kezelését végző osztály.
  * 
  * @since 1.0
- * @author Anikó
+ * @author Tatár Anikó
  *
  */
 public class AdatbazisKezelo {
 
 	/**
-	 * Az adatbázis drivere. (Az adatbázis műveleteket ezen keresztül lehet elérni.)
+	 * Az adatbázis drivere. (Az adatbázis műveleteket ezen keresztül lehet
+	 * elérni.)
 	 */
 	private static final String DB_DRIVER = "org.hsqldb.jdbcDriver";
-	
+
 	/**
 	 * Az adatbázis elérési útvonala.
 	 */
 //	private static final String DB_URL = "jdbc:hsqldb:mem:avon";
-	private static final String DB_URL = "jdbc:hsqldb:file:f:/Progik/JAVA progt-ptogk/avon-calculator/avon3.db";
+	private static final String DB_URL = "jdbc:hsqldb:file:avon.db";
 
 	/**
-	 * Statikus inicializáló blokk az adatbázis driverének betöltéséhez. (Az osztály első elérésekor lefut.)
+	 * Statikus inicializáló blokk az adatbázis driverének betöltéséhez. (Az
+	 * osztály első elérésekor lefut.)
 	 */
-	static{
+	static {
 		try {
 			Class.forName(DB_DRIVER);
 		} catch (ClassNotFoundException e) {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	/**
 	 * Az adatbázishoz való kapcsolódás, kapcsolat létrehozása.
 	 * 
@@ -51,11 +53,12 @@ public class AdatbazisKezelo {
 		}
 		return dbKapcsolat;
 	}
-	
+
 	/**
 	 * Az adatbázissal folyamatban lévő kapcsolat lezárása.
 	 * 
-	 * @param dbKapcsolat Kapcsolat
+	 * @param dbKapcsolat
+	 *            Kapcsolat
 	 */
 	public static void lezarDbKapcsolat(Connection dbKapcsolat) {
 		try {
@@ -65,11 +68,12 @@ public class AdatbazisKezelo {
 			e.printStackTrace();
 		}
 	}
-	
+
 	/**
 	 * Ez resultset lezárása.
 	 * 
-	 * @param resultSet ResultSet
+	 * @param resultSet
+	 *            ResultSet
 	 */
 	public static void lezarResultSet(ResultSet resultSet) {
 		try {
@@ -94,7 +98,4 @@ public class AdatbazisKezelo {
 		}
 	}
 
-	
-
-	
 }

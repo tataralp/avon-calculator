@@ -12,7 +12,7 @@ public class RendelesKezelo {
 	/**
 	 * A rendelésben lévő termékek teljes árának összegét számoló metódus.
 	 * 
-	 * @param rendeles Rendelés
+	 * @param rendeles Rendelés {@link Rendeles}
 	 * @return Teljes rendelés összeg
 	 */
 	public double teljesRendelesOsszegSzamolas (Rendeles rendeles){
@@ -23,7 +23,7 @@ public class RendelesKezelo {
 	 * A rendelésben lévő termékek Avon kedvezménnyel csökkentett árának összegét számoló metódus. 
 	 * (Tanácsadó által az Avonnak fizetendő rész.)
 	 * 
-	 * @param rendeles Rendelés
+	 * @param rendeles Rendelés {@link Rendeles}
 	 * @return Teljes rendelés összeg Avon kedvezménnyel
 	 */
 	public double teljesRendelesAvonKedvezmennyelOsszegSzamolas(Rendeles rendeles) {
@@ -35,7 +35,7 @@ public class RendelesKezelo {
 	 * A rendelésben lévő termékek vásárló kedvezményével csökkentett árának összegét számoló metódus. 
 	 * (A vevő/vásárló által fizetendő összeg.)
 	 * 
-	 * @param rendeles Rendelés
+	 * @param rendeles Rendelés {@link Rendeles}
 	 * @return Teljes rendelés összeg vásárló kedvezménnyel
 	 */
 	public double teljesRendelesVasarloiKedvezmennyelOsszegSzamolas(Rendeles rendeles) {
@@ -55,7 +55,7 @@ public class RendelesKezelo {
 	/**
 	 * A rendelés vásárló által fizetendő ára és a tanácsadó által Avonnak fizetendő összeg közötti különbség. A haszon értéke.
 	 * 
-	 * @param rendeles Rendelés
+	 * @param rendeles Rendelés {@link Rendeles}
 	 * @return Teljes haszon összeg
 	 */
 	public double teljesHaszonOsszegSzamolas (Rendeles rendeles){
@@ -66,7 +66,7 @@ public class RendelesKezelo {
 	/**
 	 * A várlói kedvezmény miatt a vásárló által megtakarított összeg számolása a rendelésből.
 	 * 
-	 * @param rendeles Rendelés
+	 * @param rendeles Rendelés {@link Rendeles}
 	 * @return Teljes vasarlói kedvezmény összeg
 	 */
 	public double teljesVasaroikedvezmenyOsszegSzamolas (Rendeles rendeles){

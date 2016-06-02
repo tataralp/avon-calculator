@@ -48,6 +48,7 @@ public class Vasarlo {
 
 	/**
 	 * Pareméteres konstuktor.
+	 * 
 	 * @param vezetekNev Vezetéknév
 	 * @param keresztNev Keresztnév
 	 * @param telefonszam Telefonszám

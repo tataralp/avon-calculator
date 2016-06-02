@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import hu.inf.unideb.avon_calculator.model.AdatbazisKeszito;
@@ -16,11 +17,13 @@ import hu.inf.unideb.avon_calculator.model.VasarloDao;
 
 public class AdatbazisTest {
 	
+	@Ignore
 	@BeforeClass
 	public static void adatbazisInicializalas() {
 		AdatbazisKeszito.adatbazisKeszites();
 	}
 
+	@Ignore
 	@Test
 	public void tesztVasarlokLekerdezese() {
 		VasarloDao vasarloDao = new VasarloDao();
@@ -33,6 +36,7 @@ public class AdatbazisTest {
 		Assert.assertEquals(25, lekerdezVasarlok.get(0).getVasarloKedvezmeny());
 	}
 	
+	@Ignore
 	@Test
 	public void tesztRendeles(){
 		VasarloDao vasarloDao = new VasarloDao();

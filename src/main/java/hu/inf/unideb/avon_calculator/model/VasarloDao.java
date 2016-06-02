@@ -19,7 +19,7 @@ public class VasarloDao {
 	/**
 	 * Lekérdezi az adatbázisból a vásárlókat.
 	 * 
-	 * @return vasarlokat Vásárlókat tartalmazó lista
+	 * @return vasarlokat Vásárlókat tartalmazó lista {@link Vasarlo}
 	 */
 	public List<Vasarlo> lekerdezVasarlok() {
 		List<Vasarlo> vasarlok = new ArrayList<>();
@@ -60,7 +60,7 @@ public class VasarloDao {
 	/**
 	 * Hozzáad vásárlót az adatbázishoz.
 	 * 
-	 * @param vasarlo Vásárló
+	 * @param vasarlo Vásárló {@link Vasarlo}
 	 */
 	public void hozzaAdVasarlot(Vasarlo vasarlo){
 		try {

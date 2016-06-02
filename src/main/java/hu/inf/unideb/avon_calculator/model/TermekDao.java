@@ -19,8 +19,8 @@ public class TermekDao {
 	/**
 	 * Egy rendeléshez tartozó termékek lekérdezését végzi az adatbázisból.
 	 * 
-	 * @param rendeles Rendelés
-	 * @return Termék lista
+	 * @param rendeles Rendelés {@link Rendeles}
+	 * @return Termék lista {@link Termek}
 	 */
 	public List<Termek> lekerdezTermekekRendeleshez(Rendeles rendeles) {
 		List<Termek> termekek = new ArrayList<>();
@@ -61,8 +61,8 @@ public class TermekDao {
 	/**
 	 * Egy rendeléshez kapcsolódó terméket adja hozzá az adatbázishoz.
 	 * 
-	 * @param termek Termék
-	 * @param rendeles Rendelés
+	 * @param termek Termék {@link Termek}
+	 * @param rendeles Rendelés {@link Rendeles}
 	 */
 	public void hozzaAdTermeket(Termek termek, Rendeles rendeles){
 		try {
