@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 /**
- * Az adatbázis készítését végző osztály.
+ * Az adatbázis készítését végző osztály a teszteléshez.
  * 
  * @since 1.0
  * @author Tatár Anikó
@@ -51,15 +51,15 @@ public class AdatbazisKeszito {
 	/**
 	 * Segédmetódus az SQL futtatásához.
 	 * 
-	 * @param dbKapcsolat
-	 * @param createTableVasarloSQL
-	 * @throws SQLException
+	 * @param dbKapcsolat Kapcsolat
+	 * @param sql A futtatni kívánt SQL.
+	 * @throws SQLException Ecxeption dobás, ha vmi hiba történik az SQL futtatás közben.
 	 */
-	private static void sqlFuttato(Connection dbKapcsolat, String createTableVasarloSQL) throws SQLException {
+	private static void sqlFuttato(Connection dbKapcsolat, String sql) throws SQLException {
 		PreparedStatement preparedStatement;
 		// előkészíti az sql-t
-		preparedStatement = dbKapcsolat.prepareStatement(createTableVasarloSQL);
-		System.out.println(createTableVasarloSQL);
+		preparedStatement = dbKapcsolat.prepareStatement(sql);
+		System.out.println(sql);
 		// lefuttatja az sql-t
 		preparedStatement.executeUpdate();
 		System.out.println("Tábla kész!");

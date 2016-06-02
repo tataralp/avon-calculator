@@ -43,7 +43,7 @@ public class RendelesFelvetelKepernyoController {
 	private ComboBox<Vasarlo> vasarloValsztoBox;
 	
 	/**
-	 * Választott Vásárló
+	 * Választott Vásárló.
 	 */
 	private Vasarlo valasztottVasarlo;
 

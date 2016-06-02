@@ -55,11 +55,17 @@
 			<version>1.7.21</version>
 		</dependency>
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>jcl-over-slf4j</artifactId>
-			<version>1.7.21</version>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.1.7</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>1.1.7</version>
 		</dependency>
 	</dependencies>
+
 
 	<build>
 		<plugins>
@@ -73,10 +79,11 @@
 						<goals>
 							<goal>enforce</goal>
 						</goals>
+						<phase>validate</phase>
 						<configuration>
 							<rules>
 								<requireJavaVersion>
-									<version>1.8.0</version>
+									<version>[1.8.0-u40,)</version>
 								</requireJavaVersion>
 							</rules>
 						</configuration>
@@ -86,6 +93,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
@@ -167,8 +175,64 @@
 					</execution>
 				</executions>
 			</plugin>
-
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+			</plugin>
 		</plugins>
 	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.17</version>
+				<configuration>
+					<configLocation>${basedir}/checkstyle.xml</configLocation>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<quiet>true</quiet>
+					<instrumentation>
+						<excludes>
+							<exclude>*.class</exclude>
+							<exclude>hu/inf/unideb/avon_calculator/*.class</exclude>
+							<exclude>hu/inf/unideb/avon_calculator/model/AdatbazisKeszito.java</exclude>
+							<exclude>hu/inf/unideb/avon_calculator/model/AdatbazisKezelo.java</exclude>
+							<exclude>hu/inf/unideb/avon_calculator/model/Rendeles.java</exclude>
+							<exclude>hu/inf/unideb/avon_calculator/model/RendelesDAO.java</exclude>
+							<exclude>hu/inf/unideb/avon_calculator/model/Termek.java</exclude>
+							<exclude>hu/inf/unideb/avon_calculator/model/TermekDAO.java</exclude>
+							<exclude>hu/inf/unideb/avon_calculator/model/Vasarlo.java</exclude>
+							<exclude>hu/inf/unideb/avon_calculator/model/VasarloDAO.java</exclude>
+							<exclude>hu/inf/unideb/avon_calculator/controller/*.class</exclude>
+						</excludes>
+					</instrumentation>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.7.6.201602180812</version>
+				<configuration>
+
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.3</version>
+				<configuration>
+
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>
 
 </project>

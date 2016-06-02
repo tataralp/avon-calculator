@@ -3,6 +3,9 @@ package hu.inf.unideb.avon_calculator;
 import java.io.IOException;
 import java.net.URL;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -23,7 +26,7 @@ public class Main extends Application {
 	/**
      * A naplózó példánya.
      */
-//	private final static Logger logger = LoggerFactory.getLogger(Main.class);
+	private final static Logger logger = LoggerFactory.getLogger(Main.class);
 	
 	/**
 	 * A program fő stage-e.
@@ -82,7 +85,7 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch (IOException e) {
-//			logger.error("Hiba történt az induláskor: " + e.getMessage());
+			logger.error("Hiba történt az induláskor: " + e.getMessage());
 		}
 	}
 
@@ -92,7 +95,7 @@ public class Main extends Application {
 	 * @param args Alkalmazás paramétere
 	 */
 	public static void main(String[] args) {
-//		logger.info("Az Avon Calculator fut.");
+		logger.info("Az Avon Calculator fut.");
 		launch(args);
 	}
 

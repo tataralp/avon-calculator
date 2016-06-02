@@ -34,7 +34,7 @@ public class Termek {
 	 */
 	private int darabszam;
 	
-	/*
+	/**
 	 * Termék Avon kedvezmény értéke.
 	 */
 	private int avonKedvezmeny;

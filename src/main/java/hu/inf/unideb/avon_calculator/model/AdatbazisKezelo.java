@@ -57,8 +57,7 @@ public class AdatbazisKezelo {
 	/**
 	 * Az adatbázissal folyamatban lévő kapcsolat lezárása.
 	 * 
-	 * @param dbKapcsolat
-	 *            Kapcsolat
+	 * @param dbKapcsolat Kapcsolat
 	 */
 	public static void lezarDbKapcsolat(Connection dbKapcsolat) {
 		try {
@@ -72,8 +71,7 @@ public class AdatbazisKezelo {
 	/**
 	 * Ez resultset lezárása.
 	 * 
-	 * @param resultSet
-	 *            ResultSet
+	 * @param resultSet ResultSet
 	 */
 	public static void lezarResultSet(ResultSet resultSet) {
 		try {
@@ -87,7 +85,7 @@ public class AdatbazisKezelo {
 	/**
 	 * A preparedstatement lezárása.
 	 * 
-	 * @param preparedStatement
+	 * @param preparedStatement PreparedStatement
 	 */
 	public static void lezarPreparedStatement(PreparedStatement preparedStatement) {
 		try {

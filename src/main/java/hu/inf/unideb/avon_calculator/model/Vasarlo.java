@@ -145,7 +145,7 @@ public class Vasarlo {
 	}
 
 	/**
-	 * Beállítja a vásárló e-mail címét
+	 * Beállítja a vásárló e-mail címét.
 	 * 
 	 * @param email E-mail cím
 	 */
