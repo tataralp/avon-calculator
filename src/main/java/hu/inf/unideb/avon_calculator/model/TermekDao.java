@@ -7,8 +7,21 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A termékhez kapcsolódó adatbázisműveleteket tartalmazó osztály.
+ * 
+ * @since 1.0
+ * @author Tatár Anikó
+ *
+ */
 public class TermekDao {
 
+	/**
+	 * Egy rendeléshez tartozó termékek lekérdezését végzi az adatbázisból.
+	 * 
+	 * @param rendeles Rendelés
+	 * @return Termék lista
+	 */
 	public List<Termek> lekerdezTermekekRendeleshez(Rendeles rendeles) {
 		List<Termek> termekek = new ArrayList<>();
 		String selectSQL = "SELECT * FROM TERMEK WHERE Rendeles_ID = ?";
@@ -42,10 +55,15 @@ public class TermekDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		return termekek;
 	}
 	
+	/**
+	 * Egy rendeléshez kapcsolódó terméket adja hozzá az adatbázishoz.
+	 * 
+	 * @param termek Termék
+	 * @param rendeles Rendelés
+	 */
 	public void hozzaAdTermeket(Termek termek, Rendeles rendeles){
 		try {
 			String tablaHozzaadas = "INSERT INTO termek(Cikkszam, Nev, Ar, Darabszam, Avon_kedvezmeny, Rendeles_ID) "
@@ -67,6 +85,5 @@ public class TermekDao {
 			e.printStackTrace();
 		}
 	}
-	
 	
 }

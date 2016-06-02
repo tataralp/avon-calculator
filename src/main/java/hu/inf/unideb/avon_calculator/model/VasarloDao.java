@@ -7,12 +7,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A vásárlóhoz kapcsolódó adatbázisműveleteket tartalmazó osztály.
+ * 
+ * @since 1.0
+ * @author Tatár Anikó
+ *
+ */
 public class VasarloDao {
 
 	/**
-	 * Lekérdezi az adatbzisból a vásárlókat.
+	 * Lekérdezi az adatbázisból a vásárlókat.
 	 * 
-	 * @return vasarlokat tratalmazó lista
+	 * @return vasarlokat Vásárlókat tartalmazó lista
 	 */
 	public List<Vasarlo> lekerdezVasarlok() {
 		List<Vasarlo> vasarlok = new ArrayList<>();
@@ -50,6 +57,11 @@ public class VasarloDao {
 		return vasarlok;
 	}
 	
+	/**
+	 * Hozzáad vásárlót az adatbázishoz.
+	 * 
+	 * @param vasarlo Vásárló
+	 */
 	public void hozzaAdVasarlot(Vasarlo vasarlo){
 		try {
 			String tablaHozzaadas = "INSERT INTO vasarlo(Vezetek_nev, Kereszt_nev, Telefon_szam, E_mail, Vasarlo_kedvezmeny) "
@@ -71,42 +83,4 @@ public class VasarloDao {
 		}
 	}
 	
-	public void torolVasarlot(Vasarlo vasarlo){
-		try {		
-			String sorTorles = "DELETE vasarlo WHERE Vasarlo_ID = ?";
-			Connection dbKapcsolat = AdatbazisKezelo.getDbKapcsolat();
-			PreparedStatement preparedStatement = dbKapcsolat.prepareStatement(sorTorles);
-			preparedStatement.setInt(1, vasarlo.getId());
-			preparedStatement .executeUpdate();
-			AdatbazisKezelo.lezarDbKapcsolat(dbKapcsolat);
-			AdatbazisKezelo.lezarPreparedStatement(preparedStatement);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-	public void modositVasarlot(Vasarlo vasarlo){
-		try {		
-			String tablaModositas = "UPDATE vasarlo SET Vezetek_nev = ?, Kereszt_nev = ?, Telefon_szam = ?, E_mail = ?, Vasarlo_kedvezmeny = ?,"
-					+ "+  WHERE Vasarlo_ID = ?";
-			Connection dbKapcsolat = AdatbazisKezelo.getDbKapcsolat();
-			PreparedStatement preparedStatement = dbKapcsolat.prepareStatement(tablaModositas);
-			preparedStatement.setString(1, vasarlo.getVezetekNev());
-			preparedStatement.setString(2, vasarlo.getKeresztNev());
-			preparedStatement.setString(3, vasarlo.getTelefonszam());
-			preparedStatement.setString(3, vasarlo.getEmail());
-			preparedStatement.setInt(4, vasarlo.getVasarloKedvezmeny());
-			preparedStatement.setInt(5, vasarlo.getId());
-			
-			preparedStatement .executeUpdate();
-			AdatbazisKezelo.lezarDbKapcsolat(dbKapcsolat);
-			AdatbazisKezelo.lezarPreparedStatement(preparedStatement);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-	}
 }

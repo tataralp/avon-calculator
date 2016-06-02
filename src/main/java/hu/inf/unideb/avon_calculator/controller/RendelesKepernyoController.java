@@ -1,13 +1,9 @@
 package hu.inf.unideb.avon_calculator.controller;
 
-import java.util.List;
-
 import hu.inf.unideb.avon_calculator.model.Rendeles;
 import hu.inf.unideb.avon_calculator.model.RendelesDao;
 import hu.inf.unideb.avon_calculator.model.RendelesKezelo;
 import hu.inf.unideb.avon_calculator.model.Termek;
-import hu.inf.unideb.avon_calculator.model.Vasarlo;
-import hu.inf.unideb.avon_calculator.model.VasarloDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -16,39 +12,95 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+/**
+ * A rendelés képernyőhöz tartozó kontroller osztály.
+ * 
+ * @since 1.0
+ * @author Tatár Anikó
+ *
+ */
 public class RendelesKepernyoController {
 
+	/**
+	 * Paraméternélküli konstruktor.
+	 */
 	public RendelesKepernyoController(){
 	}
 	
+	/**
+	 * A rendeléseket megjelenítő táblázat.
+	 */
 	@FXML
 	private TableView<Rendeles> rendelesTableview;
+	
+	/**
+	 * A rendelés kampányát megjelenítő oszlop.
+	 */
 	@FXML
 	private TableColumn<Rendeles, String> kamp;
+	
+	/**
+	 * A rendelés vásárlóját megjelenítő oszlop.
+	 */
 	@FXML
 	private TableColumn<Rendeles, String> vas;
+	
+	/**
+	 * A rendelés időpontját megjelenítő oszlop.
+	 */
 	@FXML
 	private TableColumn<Rendeles, String> idop;
-	@FXML
-	private TableColumn<Rendeles, Integer> teljrossz;
 	
+	/**
+	 * A termékeket megjelenítő táblázat.
+	 */
 	@FXML
 	private TableView<Termek> termekekTableview;
+	
+	/**
+	 * A termék cikkszámát megjelenítő oszlop.
+	 */
 	@FXML
 	private TableColumn<Termek, Integer> cikksz;
+	
+	/**
+	 * A termék nevét megjelenítő oszlop.
+	 */
 	@FXML
 	private TableColumn<Termek, String> nev;
+	
+	/**
+	 * A termék árát megjelenítő oszlop.
+	 */
 	@FXML
 	private TableColumn<Termek, Integer> ar;
+	
+	/**
+	 * A termék darabszámát megjelenítő oszlop.
+	 */
 	@FXML
 	private TableColumn<Termek, Integer> dbsz;
+	
+	/**
+	 * A termék Avon kedvezményét megjelenítő oszlop.
+	 */
 	@FXML
 	private TableColumn<Termek, Integer> kedv;
 	
+	/**
+	 * Rendeléseket tartalmazó lista.
+	 */
 	private ObservableList<Rendeles> rendelesek = FXCollections.observableArrayList();
+	
+	/**
+	 * Termékeket tartalmazó lista.
+	 */
 	private ObservableList<Termek> termekek = FXCollections.observableArrayList();
 	
-	
+	/**
+	 * A rendelés képernyő inicializáló metódusa.
+	 * Amely lekéri és beállítja a megjeleníteni kívánt rendelések (és a hozzájuk tartozó termékek) megadott adatait a táblázatokban.
+	 */
 	@FXML
 	public void initialize() {
 		RendelesDao rendelesDao = new RendelesDao();
@@ -68,17 +120,40 @@ public class RendelesKepernyoController {
 
 	}
 
+	/**
+	 * Teljes rendelés összeget tartalmazó label.
+	 */
 	@FXML
 	private Label troSz;
+	
+	/**
+	 * Teljes rendelés Avon kedvezménnyel összeget tartalmazó label.
+	 */
 	@FXML
 	private Label trAkedvSz;
+	
+	/**
+	 * Teljes rendelés vásárlói kedvezménnyel összeget tartalmazó label.
+	 */
 	@FXML
 	private Label trVkedvSz;
+	
+	/**
+	 * Teljes haszon összeget tartalmazó label.
+	 */
 	@FXML
 	private Label thaszosszSz;
+	
+	/**
+	 * Teljes vásárlói kedvezmény összeget tartalmazó label.
+	 */
 	@FXML
 	private Label tvaskedvSz;
 
+	/**
+	 * A rendelésre való kattintás hatására végrehajtandó műveleteket tartalmazó metódus. 
+	 * (A termékek és a számolások megjelenítéséhez.)
+	 */
 	@FXML public void kattraTermekek() {
 		Rendeles rendeles = rendelesTableview.getSelectionModel().getSelectedItem();
 		termekek.clear();

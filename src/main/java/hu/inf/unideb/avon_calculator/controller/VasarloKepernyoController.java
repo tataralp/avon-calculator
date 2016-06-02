@@ -11,26 +11,66 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+/**
+ * A vásárló képernyőhöz tartozó kontroller osztály.
+ * 
+ * @since 1.0
+ * @author Tatár Anikó
+ *
+ */
 public class VasarloKepernyoController {
 
+	/**
+	 * A vásárlókat megjelenítő táblázat.
+	 */
 	@FXML
 	private TableView<Vasarlo> vasarloTableview;
+	
+	/**
+	 * A vásárló vezetéknevét megjelenítő oszlop.
+	 */
 	@FXML
 	private TableColumn<Vasarlo, String> vNev;
+	
+	/**
+	 * A vásárló keresztnevét megjelenítő oszlop.
+	 */
 	@FXML
 	private TableColumn<Vasarlo, String> kNev;
+	
+	/**
+	 * A vásárló telefonszámát megjelenítő oszlop.
+	 */
 	@FXML
 	private TableColumn<Vasarlo, String> tel;
+	
+	/**
+	 * A vásárló e-mail címét megjelenítő oszlop.
+	 */
 	@FXML
 	private TableColumn<Vasarlo, String> mail;
+	
+	/**
+	 * A vásárló kedvezményét megjelenítő oszlop.
+	 */
 	@FXML
 	private TableColumn<Vasarlo, Integer> kedv;
 
+	/**
+	 * Vásárlókat tartalmazó lista.
+	 */
 	private ObservableList<Vasarlo> vasarlok = FXCollections.observableArrayList();
 
+	/**
+	 * Paraméternélküli konstruktor.
+	 */
 	public VasarloKepernyoController() {
 	}
 
+	/**
+	 * Vásárló képernyő inicializáló metódus. 
+	 * Amely lekéri és beállítja a megjeleníteni kívánt vásárlók megadott adatait a táblázatban.
+	 */
 	@FXML
 	public void initialize() {
 		VasarloDao vasarloDao = new VasarloDao();

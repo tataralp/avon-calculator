@@ -4,8 +4,18 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * Az adatbázis készítését végző osztály.
+ * 
+ * @since 1.0
+ * @author Anikó
+ *
+ */
 public class AdatbazisKeszito {
 
+	/**
+	 * Létrehozza az adatbázis tábláit.
+	 */
 	public static void adatbazisKeszites() {
 		Connection dbKapcsolat = null;
 
@@ -38,6 +48,13 @@ public class AdatbazisKeszito {
 		}
 	}
 	
+	/**
+	 * Segédmetódus az SQL futtatásához.
+	 * 
+	 * @param dbKapcsolat
+	 * @param createTableVasarloSQL
+	 * @throws SQLException
+	 */
 	private static void sqlFuttato(Connection dbKapcsolat, String createTableVasarloSQL) throws SQLException {
 		PreparedStatement preparedStatement;
 		// előkészíti az sql-t

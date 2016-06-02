@@ -1,18 +1,60 @@
 package hu.inf.unideb.avon_calculator.model;
 
+/**
+ * Terméket reprezentáló osztály.
+ * 
+ * @since 1.0
+ * @author Tatár Anikó
+ *
+ */
 public class Termek {
 
+	/**
+	 * Termék id-ja.
+	 */
 	private int id;
+	
+	/**
+	 * Termék cikkszáma.
+	 */
 	private int cikkszam;
+	
+	/**
+	 * Termék megnevezése/neve.
+	 */
 	private String nev;
+	
+	/**
+	 * Termék ára.
+	 */
 	private int ar;
+	
+	/**
+	 * Termék darabszáma/mennyisége.
+	 */
 	private int darabszam;
+	
+	/*
+	 * Termék Avon kedvezmény értéke.
+	 */
 	private int avonKedvezmeny;
 
+	/**
+	 * Termék paraméter nélküli konstruktora.
+	 */
 	public Termek() {
 		super();
 	}
 
+	/**
+	 * Termék paraméteres konstruktora.
+	 * 
+	 * @param cikkszam Cikkszám
+	 * @param nev Név
+	 * @param ar Ár
+	 * @param darabszam Darabszám
+	 * @param avonKedvezmeny Avon kedvezmény
+	 */
 	public Termek(int cikkszam, String nev, int ar, int darabszam, int avonKedvezmeny) {
 		super();
 		this.cikkszam = cikkszam;
@@ -22,60 +64,126 @@ public class Termek {
 		this.setAvonKedvezmeny(avonKedvezmeny);
 	}
 
+	/**
+	 * Lekéri a termék id-ját.
+	 * 
+	 * @return Termék id
+	 */
 	public int getId() {
 		return id;
 	}
 
+	/**
+	 * Beállítja a termék id-ját.
+	 * 
+	 * @param id Termék id
+	 */
 	public void setId(int id) {
 		this.id = id;
 	}
 
+	/**
+	 * Lekéri a termék cikkszámát.
+	 * 
+	 * @return Cikkszám
+	 */
 	public int getCikkszam() {
 		return cikkszam;
 	}
 
+	/**
+	 * Beállítja a termék cikkszámát.
+	 * 
+	 * @param cikkszam Cikkszám
+	 */
 	public void setCikkszam(int cikkszam) {
 		this.cikkszam = cikkszam;
 	}
 
+	/**
+	 * Lekéri a termék nevét / megnevezését.
+	 * 
+	 * @return Név
+	 */
 	public String getNev() {
 		return nev;
 	}
 
+	/**
+	 * Beállítja a termék nevét / megnevezését.
+	 * 
+	 * @param nev Név
+	 */
 	public void setNev(String nev) {
 		this.nev = nev;
 	}
 
+	/**
+	 * Lekéri a termék árát.
+	 * 
+	 * @return Ár
+	 */
 	public int getAr() {
 		return ar;
 	}
 
+	/**
+	 * Beállítja a termék árát.
+	 * 
+	 * @param ar Ár
+	 * @throws IllegalArgumentException Exception dobása, ha az ár kisebb mint nulla.
+	 */
 	public void setAr(int ar) throws IllegalArgumentException {
 		if (ar < 0)
 			throw new IllegalArgumentException();
 		this.ar = ar;
 	}
 
+	/**
+	 * Lekéri a termék darabszámt.
+	 * 
+	 * @return Darabszám
+	 */
 	public int getDarabszam() {
 		return darabszam;
 	}
 
+	/**
+	 * Beállítja a termék darabszámát.
+	 * 
+	 * @param darabszam Darabszám
+	 * @throws IllegalArgumentException Exceptiont dobása, ha a darabszám kisebb mint nulla.
+	 */
 	public void setDarabszam(int darabszam) throws IllegalArgumentException {
 		if (darabszam < 0)
 			throw new IllegalArgumentException();
 		this.darabszam = darabszam;
 	}
 
+	/**
+	 * Lekéri a termék Avon kedvezményét.
+	 * 
+	 * @return Avon kedvezmény
+	 */
 	public int getAvonKedvezmeny() {
 		return avonKedvezmeny;
 	}
 
+	/**
+	 * Beállítja a termék Avon kedvezményét.
+	 * 
+	 * @param avonKedvezmeny Avon kedvezmény
+	 * @throws IllegalArgumentException Exception dobása, ha a kedvezmény értéke nem 0 és 100 közé esik.
+	 */
 	public void setAvonKedvezmeny(int avonKedvezmeny) throws IllegalArgumentException {
 		if (avonKedvezmeny < 0 || avonKedvezmeny > 100)
 			throw new IllegalArgumentException();
 		this.avonKedvezmeny = avonKedvezmeny;
 	}
 
+	/**
+	 * HashCode generálása.
+	 */
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -89,6 +197,9 @@ public class Termek {
 		return result;
 	}
 
+	/**
+	 * Az equals metódus a termékek összehasonlításához.
+	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -116,6 +227,9 @@ public class Termek {
 		return true;
 	}
 
+	/**
+	 * ToString metódus a termék kiiratásához.
+	 */
 	@Override
 	public String toString() {
 		return "Termek: " + id + ", cikkszam: " + cikkszam + ", nev: " + nev + ", ar: " + ar + ", darabszam: "

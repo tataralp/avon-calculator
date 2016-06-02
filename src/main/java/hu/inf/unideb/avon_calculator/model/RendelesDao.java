@@ -7,12 +7,23 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A rendeléshez kapcsolódó adatbázisműveleteket tartalmazó osztály.
+ * 
+ * @since 1.0
+ * @author Tatár Anikó
+ *
+ */
 public class RendelesDao {
 
+	/**
+	 * Rendelést ad hozzá az adatbázishoz.
+	 * 
+	 * @param rendeles Rendelés
+	 */
 	public void hozzaAdRendelest(Rendeles rendeles) {
 		try {
 			String tablaHozzaadas = "INSERT INTO rendeles(kampany, vasarlo_ID, idopont) " + "VALUES(?, ?, ? );";
@@ -41,6 +52,11 @@ public class RendelesDao {
 		}
 	}
 
+	/**
+	 * Lekérdezi az adatbázisból a rendeléseket.
+	 * 
+	 * @return Rendelés lista
+	 */
 	public List<Rendeles> lekerdezRendelesek() {
 		List<Rendeles> rendelesek = new ArrayList<>();
 		String selectSQL = "SELECT * FROM RENDELES";
@@ -93,6 +109,13 @@ public class RendelesDao {
 		return rendelesek;
 	}
 	
+	/**
+	 * A megadott id-val rendelkező vásárlót (vásárló listából) lekérdező segédmetódus. 
+	 * 
+	 * @param vasarlok Vásárló lista
+	 * @param vasarloID Vásárló id
+	 * @return Vásárló
+	 */
 	private Vasarlo getVasarlo(List<Vasarlo> vasarlok, int vasarloID){
 		Vasarlo vasarlom = new Vasarlo();
 		for (Vasarlo vasarlo : vasarlok) {
