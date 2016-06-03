@@ -59,7 +59,7 @@ public class MenuController {
 	}
 	
 	/**
-	 * A névjegyhez tartozó metódus.
+	 * Kiírja a névjegyet.
 	 */
 	@FXML
 	public void nevjegy() {

@@ -22,33 +22,41 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
 
-	
 	/**
-     * A naplózó példánya.
-     */
+	 * A naplózó példánya.
+	 */
 	private final static Logger logger = LoggerFactory.getLogger(Main.class);
-	
+
 	/**
-	 * A program fő stage-e.
+	 * A JavaFX fő stage-e.
 	 */
 	private Stage primaryStage;
-	
+
 	/**
-	 * A program border pane-je. (Keret.)
-	 * Felül a menü, alul pedig az aktuális képernyő.
+	 * A program border pane-je. (Keret.) Felül a menü, alul pedig az aktuális
+	 * képernyő.
 	 */
 	private BorderPane root = new BorderPane();
 
 	/**
 	 * A főprogram statikus példánya.
 	 */
-	//csak egyet akarunk belőle
+	// csak egyet akarunk belőle
 	private static Main instance;
 
 	/**
-	 * Main publikus konstruktorja. Nem készít új példányt, csak az aktuálisat állítja be az instance-ba.
+	 * Main publikus konstruktorja. Nem készít új példányt, csak az aktuálisat
+	 * állítja be az instance-ba. Egy példány lehessen.
+	 * 
+	 * @throws UnsupportedOperationException Exception dobás, ha többször akarnák példányosítani a programot.
 	 */
 	public Main() {
+		super();
+		if (instance != null) {
+			logger.error("A main osztály singleton de mégis többször lett meghívva a konstruktor!");
+			throw new UnsupportedOperationException(
+					getClass() + " osztály singleton de mégis többször lett meghívva a konstruktor");
+		}
 		instance = this;
 	}
 
@@ -92,7 +100,8 @@ public class Main extends Application {
 	/**
 	 * A program belépési pontja. Indítja a JavaFX-et.
 	 * 
-	 * @param args Alkalmazás paramétere
+	 * @param args
+	 *            Alkalmazás paramétere
 	 */
 	public static void main(String[] args) {
 		logger.info("Az Avon Calculator fut.");
