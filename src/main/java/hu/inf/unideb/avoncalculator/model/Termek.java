@@ -57,7 +57,7 @@ public class Termek {
 	 */
 	public Termek(int cikkszam, String nev, int ar, int darabszam, int avonKedvezmeny) {
 		super();
-		this.cikkszam = cikkszam;
+		this.setCikkszam(cikkszam);
 		this.nev = nev;
 		this.setAr(ar);
 		this.setDarabszam(darabszam);
@@ -95,8 +95,11 @@ public class Termek {
 	 * Beállítja a termék cikkszámát.
 	 * 
 	 * @param cikkszam Cikkszám
+	 * @throws IllegalArgumentException Exception dobása, ha a cikkszám kisebb mint nulla, vagy nagyobb mint 99999.
 	 */
-	public void setCikkszam(int cikkszam) {
+	public void setCikkszam(int cikkszam) throws IllegalArgumentException{
+		if ( cikkszam < 0 || cikkszam > 99999 )
+			throw new IllegalArgumentException();
 		this.cikkszam = cikkszam;
 	}
 
@@ -152,10 +155,10 @@ public class Termek {
 	 * Beállítja a termék darabszámát.
 	 * 
 	 * @param darabszam Darabszám
-	 * @throws IllegalArgumentException Exceptiont dobása, ha a darabszám kisebb mint nulla.
+	 * @throws IllegalArgumentException Exceptiont dobása, ha a darabszám kisebb mint egy.
 	 */
 	public void setDarabszam(int darabszam) throws IllegalArgumentException {
-		if (darabszam < 0)
+		if (darabszam < 1)
 			throw new IllegalArgumentException();
 		this.darabszam = darabszam;
 	}
