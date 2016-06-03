@@ -1,0 +1,4 @@
+10:56:09.362 [JavaFX Application Thread] ERROR h.i.u.a.model.AdatbazisKezelo - Adatbázis kapcsolódási hiba! Database lock acquisition failure: lockFile: org.hsqldb.persist.LockFile@b89fc706[file =F:\Progik\JAVA progt-ptogk\avon-calculator\avon.db.lck, exists=true, locked=false, valid=false, ] method: checkHeartbeat read: 2016-06-03 08:56:08 heartbeat - read: -9120 ms.
+10:56:09.363 [JavaFX Application Thread] ERROR hu.inf.unideb.avon_calculator.Main - A vásárló képernyő betöltése nem sikerült!
+/F:/Progik/JAVA%20progt-ptogk/avon-calculator/target/classes/hu/inf/unideb/avon_calculator/view/VasarloKepernyo.fxml
+

@@ -112,7 +112,7 @@
 						<configuration>
 							<archive>
 								<manifest>
-									<mainClass>hu.inf.unideb.avon_calculator.Main</mainClass>
+									<mainClass>hu.inf.unideb.avoncalculator.Main</mainClass>
 								</manifest>
 							</archive>
 							<descriptorRefs>
@@ -169,7 +169,7 @@
 							<url>${dbConnectionString}</url>
 							<autocommit>true</autocommit>
 							<srcFiles>
-								<srcFile>${basedir}/src/main/resources/hu/inf/unideb/avon_calculator/avon.sql</srcFile>
+								<srcFile>${basedir}/src/main/resources/hu/inf/unideb/avoncalculator/avon.sql</srcFile>
 							</srcFiles>
 						</configuration>
 					</execution>
@@ -202,16 +202,16 @@
 					<instrumentation>
 						<excludes>
 							<exclude>*.class</exclude>
-							<exclude>hu/inf/unideb/avon_calculator/*.class</exclude>
-							<exclude>hu/inf/unideb/avon_calculator/model/AdatbazisKeszito.java</exclude>
-							<exclude>hu/inf/unideb/avon_calculator/model/AdatbazisKezelo.java</exclude>
-							<exclude>hu/inf/unideb/avon_calculator/model/Rendeles.java</exclude>
-							<exclude>hu/inf/unideb/avon_calculator/model/RendelesDAO.java</exclude>
-							<exclude>hu/inf/unideb/avon_calculator/model/Termek.java</exclude>
-							<exclude>hu/inf/unideb/avon_calculator/model/TermekDAO.java</exclude>
-							<exclude>hu/inf/unideb/avon_calculator/model/Vasarlo.java</exclude>
-							<exclude>hu/inf/unideb/avon_calculator/model/VasarloDAO.java</exclude>
-							<exclude>hu/inf/unideb/avon_calculator/controller/*.class</exclude>
+							<exclude>hu/inf/unideb/avoncalculator/*.class</exclude>
+							<exclude>hu/inf/unideb/avoncalculator/model/AdatbazisKeszito.class</exclude>
+							<exclude>hu/inf/unideb/avoncalculator/model/AdatbazisKezelo.class</exclude>
+							<exclude>hu/inf/unideb/avoncalculator/model/Rendeles.class</exclude>
+							<exclude>hu/inf/unideb/avoncalculator/model/RendelesDAO.class</exclude>
+							<exclude>hu/inf/unideb/avoncalculator/model/Termek.class</exclude>
+							<exclude>hu/inf/unideb/avoncalculator/model/TermekDAO.class</exclude>
+							<exclude>hu/inf/unideb/avoncalculator/model/Vasarlo.class</exclude>
+							<exclude>hu/inf/unideb/avoncalculator/model/VasarloDAO.class</exclude>
+							<exclude>hu/inf/unideb/avoncalculator/controller/*.class</exclude>
 						</excludes>
 					</instrumentation>
 				</configuration>
@@ -231,6 +231,11 @@
 				<configuration>
 
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>2.19.1</version>
 			</plugin>
 		</plugins>
 	</reporting>

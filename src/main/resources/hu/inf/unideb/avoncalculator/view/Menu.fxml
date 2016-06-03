@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+
+<MenuBar xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.inf.unideb.avoncalculator.controller.MenuController">
+	<menus>
+		<Menu mnemonicParsing="false" text="Vásárló">
+			<items>
+				<MenuItem mnemonicParsing="false" onAction="#vasarloFelvevoMutat" text="Új vásárló felvétele" />
+				<MenuItem mnemonicParsing="false" onAction="#vasarloKepernyoMutat" text="Vásárlók listázása" />
+				
+			</items>
+		</Menu>
+		<Menu mnemonicParsing="false" text="Rendelés">
+			<items>
+				<MenuItem mnemonicParsing="false" onAction="#rendelesFelvevoMutat" text="Új rendelés felvétele" />
+				<MenuItem mnemonicParsing="false" onAction="#rendelesKepernyoMutat" text="Rendelések listázása" />
+			</items>
+		</Menu>
+		<Menu mnemonicParsing="false" text="Súgó">
+			<items>
+				<MenuItem mnemonicParsing="false" text="Névjegy" onAction="#nevjegy"/>
+			</items>
+		</Menu>
+	</menus>
+</MenuBar>
